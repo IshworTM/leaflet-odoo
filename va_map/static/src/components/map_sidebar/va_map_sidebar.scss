@@ -1,0 +1,18 @@
+.hidden {
+    display: none;
+    transition: display 0.3s ease;
+}
+
+.unhidden {
+    display: block;
+    transition: display 0.3s ease;
+}
+
+.map-sidebar {
+    font-size: 2rem;
+    height: 100%;
+    width: 400px;
+    background-color: #1c3131;
+    padding: 10px;
+    transition: display 0.3s ease;
+}

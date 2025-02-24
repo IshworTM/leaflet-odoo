@@ -1,0 +1,8 @@
+$container-width: 100%;
+
+.map-container {
+    width: $container-width;
+    height: 100%;
+    position: relative;
+    z-index: 0;
+}

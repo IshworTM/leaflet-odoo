@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<templates xml:space="preserve">
+    <t t-name="MapViewTemplate" owl="1">
+        <div t-ref="map" id="map"></div>
+    </t>
+</templates>

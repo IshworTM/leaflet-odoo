@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="MapHomeTemplate" owl="1">
+        <div class="map-home">
+            <div class="sidebar-section">
+                <div class="button-box">
+                    <MapButton/>
+                </div>
+                <div class="sidebar-box" id="sidebar">
+                    <MapSidebar objects="state.objects" markers="markers" map="map" getSelectedObject.bind="getSelectedObject"/>
+                </div>
+            </div>
+            <div class="map-detail-section">
+                <div class="map-section">
+                    <MapContainer objects="state.objects" markers="markers" updatePropsData.bind="updatePropsData"/>
+                </div>
+                <div class="detail-section">
+                    <MapDetails t-if="state.selectedObject" selectedObject="state.selectedObject" locationData="locationData" onClose.bind="handleCloseDetails"/>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

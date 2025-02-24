@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<templates xml:space="preserve">
+    <t t-name="MapDetailsTemplate" owl="1">
+        <div class="details-container">
+            <t t-set="obj" t-value="props.selectedObject"/>
+            <t t-set="data" t-value="props.locationData"/>
+            <button class="close-btn fa fa-times fa-2x" type="button" t-on-click="close" aria-label="Close"></button>
+            <t t-if="obj">
+                <h2 class="text-center">
+                    <t t-if="obj.name">
+                        <span>Details for 
+                            <strong class="text-primary">
+                                <t t-esc="obj.name"/>
+                            </strong>
+                        </span>
+                    </t>
+                    <t t-else="">
+                        <span>Additional Details</span>
+                    </t>
+                </h2>
+                <div class="details-table">
+                    <table class="table text-center">
+                        <t t-foreach="obj" t-as="key" t-key="key">
+                            <t t-if="key !== 'latitude' and key !== 'longitude' and key !== 'id'">
+                                <tr>
+                                    <th>
+                                        <t t-esc="formatKeys(key)"/>
+                                    </th>
+                                    <td>:</td>
+                                    <td>
+                                        <t t-esc="obj[key] or 'Unknown!'"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </t>
+                        <t t-foreach="data" t-as="dataKey" t-key="dataKey">
+                            <t t-if="dataKey !== 'address'">
+                                <tr>
+                                    <th>
+                                        <t t-esc="formatKeys(dataKey)"/>
+                                    </th>
+                                    <td>:</td>
+                                    <td>
+                                        <t t-esc="data[dataKey] or 'Unknown!'"/>
+                                    </td>
+                                </tr>
+                            </t>
+                            <t t-else="">
+                                <t t-foreach="data.address" t-as="addressKey" t-key="addressKey">
+                                    <tr>
+                                        <th>
+                                            <t t-esc="formatKeys(addressKey)"/>
+                                        </th>
+                                        <td>:</td>
+                                        <td>
+                                            <t t-esc="data.address[addressKey] or 'Unknown!'"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </t>
+                        </t>
+                    </table>
+                </div>
+            </t>
+        </div>
+    </t>
+</templates>

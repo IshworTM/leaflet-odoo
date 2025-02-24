@@ -1,0 +1,28 @@
+$font-size: 16px;
+$padding: 6px 8px;
+$box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+$border-radius: 5px;
+$map-height: 100%;
+$map-width: 100%;
+$map-bg: rgba(255, 255, 255, 0.8);
+$heading-color: #777;
+
+#map {
+    width: $map-width;
+    height: $map-height;
+    margin: 0;
+    padding: 0;
+}
+
+.obj-info {
+    font-size: $font-size;
+    padding: $padding;
+    background: $map-bg;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+
+    h2 {
+        margin: 0 0 5px;
+        color: $heading-color;
+    }
+}

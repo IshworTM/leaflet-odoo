@@ -1,0 +1,55 @@
+.map-home {
+    display: flex;
+    flex-direction: row;
+    min-height: 100%;
+    background-color: #fafafa;
+}
+
+.sidebar-section {
+    display: flex;
+    background-color: #f0f0f0;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+.map-detail-section {
+    flex: 1;
+    background-color: #fff;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.map-section {
+    flex: 1;
+    position: relative;
+    height: 100%;
+}
+
+.detail-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-box {
+    position: absolute;
+    left: 400px;
+    z-index: 1;
+    top: calc(50% - 24px);
+}
+
+.map-button {
+    cursor: pointer;
+    color: white;
+    background-color: #1c3131;
+    border-left: 0;
+    border-radius: 0 8px 8px 0;
+    height: 48px;
+    transition: opacity, color 0.3s ease-in;
+
+    &:hover {
+        color: cornflowerblue;
+        opacity: 0.65;
+    }
+}

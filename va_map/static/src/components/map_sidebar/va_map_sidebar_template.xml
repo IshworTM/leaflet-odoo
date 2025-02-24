@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates xml:space="preserve">
+    <t t-name="MapSidebarTemplate" owl="1">
+        <div class="map-sidebar unhidden" id="map-sidebar">
+            <t t-if="props.objects.length > 0">
+                <table>
+                    <tbody>
+                        <t t-foreach="props.objects" t-as="obj" t-key="obj.id">
+                            <tr>
+                                <td class="btn btn-link" t-on-click="() => this.showMarker(obj)">
+                                    <b>
+                                        <t t-esc="obj.name"/>
+                                    </b>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </t>
+            <t t-else="">
+                <div class="lead text-warning">
+                    <strong>Oops! No items to display.</strong>
+                    <br/>
+                    It looks like there are no objects here yet. Try adding some new objects, or reach out to the website administrator if you think this is a mistake.
+                </div>
+            </t>
+        </div>
+    </t>
+</templates>
