@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="va_map_list_view_tree" model="ir.ui.view">
+            <field name="name">va.map.list.view.tree</field>
+            <field name="model">va.map.list</field>
+            <field name="arch" type="xml">
+                <tree string="Map list tree view">
+                    <field name="name" />
+                    <field name="url" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="va_map_list_view_form" model="ir.ui.view">
+            <field name="name">va.map.list.view.form</field>
+            <field name="model">va.map.list</field>
+            <field name="arch" type="xml">
+                <form string="Map list form view">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="url" />
+                            <field name="is_default" widget="boolean_toggle" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="va_map_list_view_kanban" model="ir.ui.view">
+            <field name="name">va.map.list.view.kanban</field>
+            <field name="model">va.map.list</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div>
+                                    <strong>Name: </strong><field name="name" />
+                                </div>
+                                <div>
+                                    <strong>Default Tile Layer: </strong><field name="is_default" widget="boolean_toggle" />
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="va_map_list_action" model="ir.actions.act_window">
+            <field name="name">Map List</field>
+            <field name="res_model">va.map.list</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+
+        <menuitem id="va_map_list_menu" name="Map List" action="va_map_list_action" parent="va_map.map_root_menu"/>
+    </data>
+</odoo>

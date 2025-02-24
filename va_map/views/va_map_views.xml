@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="va_map_action" model="ir.actions.client">
+            <field name="name">Map View</field>
+            <field name="tag">MapAction</field>
+        </record>
+        <menuitem id="map_root_menu" name="Map" sequence="10"/>
+        <menuitem id="map_view_menu" name="View Map" action="va_map_action" parent="map_root_menu" sequence="10"/>
+    </data>
+</odoo>
