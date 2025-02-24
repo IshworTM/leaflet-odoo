@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="va_map_object_view_form" model="ir.ui.view">
+            <field name="name">va.map.object.view.form</field>
+            <field name="model">va.map.object</field>
+            <field name="arch" type="xml">
+                <form string="Object Form">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="latitude" />
+                            <field name="longitude" />
+                            <field name="category" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="va_map_object_view_tree" model="ir.ui.view">
+            <field name="name">va.map.object.view.tree</field>
+            <field name="model">va.map.object</field>
+            <field name="arch" type="xml">
+                <tree string="Object Tree">
+                    <field name="name" />
+                    <field name="latitude" />
+                    <field name="longitude" />
+                    <field name="category" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="va_map_object_action" model="ir.actions.act_window">
+            <field name="name">Objects</field>
+            <field name="res_model">va.map.object</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="map_object_menu" name="Objects" action="va_map_object_action" parent="va_map.map_root_menu" sequence="10"/>
+    </data>
+</odoo>
